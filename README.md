@@ -17,6 +17,20 @@ This project imports ranked solo/duo match data, stores it in a MySQL database, 
 - **Data Quality Checks:** Checks for missing values and duplicate match IDs.
 - **Automated Testing:** Uses pytest to validate analytical functions.
 
+## Visualizations
+
+### Ranked Win Rate Trends
+![Win Rate Trends](charts/win_rate_trends.png)
+
+### Champion Win Rate
+![Champion Win Rate](charts/champion_win_rate.png)
+
+### Champion KDA
+![Champion KDA](charts/champion_kda.png)
+
+### Champion CS per Minute
+![Champion CS per Minute](charts/champion_cs_per_min.png)
+
 ## Technologies Used
 
 - Python
