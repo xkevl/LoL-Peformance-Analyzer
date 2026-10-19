@@ -8,6 +8,14 @@ This project retrieves up to 100 of the most recent available Ranked Solo/Duo ma
 
 The analysis includes win-rate trends, champion performance, KDA, CS per minute, and comparisons between wins and losses. The selected role can be configured to focus on a specific position or all roles.
 
+## Tableau Dashboard
+
+Explore the interactive dashboard on Tableau Public:
+
+**[View the League of Legends Performance Dashboard](https://public.tableau.com/app/profile/kevin.lim7109/viz/LeagueofLegendsPerformanceDashboard/Dashboard)**
+
+The dashboard visualizes rolling win rate, champion win rate, average KDA, and CS per minute to analyze ranked match performance.
+
 ## Features
 
 - **Automated Data Import:** Retrieves ranked match data from the Riot Games API, with retry handling for API rate limits.
