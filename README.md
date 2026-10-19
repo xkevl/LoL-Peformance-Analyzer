@@ -1,174 +1,86 @@
-\# League of Legends Performance Analyzer
-
-
+# League of Legends Performance Analyzer
 
 A Python and SQL analytics project that analyzes ranked League of Legends match history using the Riot Games API and MySQL.
 
-
-
-\## Project Overview
-
-
+## Project Overview
 
 This project imports ranked solo/duo match data, stores it in a MySQL database, and analyzes gameplay performance using Python. It generates reports and visualizations to identify trends in win rate, champion performance, and differences between wins and losses.
 
+## Features
 
+- **Automated Data Import:** Retrieves ranked match data through the Riot Games API.
+- **MySQL Database:** Stores match history and prevents duplicate records during repeated imports.
+- **Performance Analytics:** Calculates win rate, KDA, CS per minute, gold per minute, and damage per minute.
+- **Champion Analysis:** Compares champion performance using games played, win rate, and other performance metrics.
+- **Trend Visualization:** Plots cumulative and rolling 10-game win rates.
+- **Win/Loss Comparison:** Compares performance statistics between wins and losses.
+- **Data Quality Checks:** Checks for missing values and duplicate match IDs.
+- **Automated Testing:** Uses pytest to validate analytical functions.
 
-\## Features
+## Technologies Used
 
+- Python
+- SQL and MySQL
+- pandas
+- matplotlib
+- Riot Games API
+- pytest
+- Git and GitHub
 
-
-\- \*\*Automated Data Import:\*\* Retrieves ranked match data through the Riot Games API.
-
-\- \*\*MySQL Database:\*\* Stores match history and prevents duplicate records during repeated imports.
-
-\- \*\*Performance Analytics:\*\* Calculates win rate, KDA, CS per minute, gold per minute, and damage per minute.
-
-\- \*\*Champion Analysis:\*\* Compares champion performance using games played, win rate, and other performance metrics.
-
-\- \*\*Trend Visualization:\*\* Plots cumulative and rolling 10-game win rates.
-
-\- \*\*Win/Loss Comparison:\*\* Compares performance statistics between wins and losses.
-
-\- \*\*Data Quality Checks:\*\* Checks for missing values and duplicate match IDs.
-
-\- \*\*Automated Testing:\*\* Uses pytest to validate analytical functions.
-
-
-
-\## Technologies Used
-
-
-
-\- Python
-
-\- SQL and MySQL
-
-\- pandas
-
-\- matplotlib
-
-\- Riot Games API
-
-\- pytest
-
-\- Git and GitHub
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 | File | Purpose |
-
 |---|---|
-
-| `import\_ranked\_matches.py` | Imports ranked match data into MySQL |
-
-| `analyze\_matches.py` | Calculates performance metrics and exports reports |
-
-| `plot\_win\_rate.py` | Visualizes win-rate trends |
-
-| `plot\_champion\_stats.py` | Visualizes champion performance |
-
+| `import_ranked_matches.py` | Imports ranked match data into MySQL |
+| `analyze_matches.py` | Calculates performance metrics and exports reports |
+| `plot_win_rate.py` | Visualizes win-rate trends |
+| `plot_champion_stats.py` | Visualizes champion performance |
 | `config.py` | Configures the role used for analysis |
+| `test_analysis.py` | Tests analytical functions |
 
-| `test\_analysis.py` | Tests analytical functions |
+## Setup
 
+1. Install Python and MySQL.
+2. Install the required Python packages:
 
+   ```bash
+   pip install requests python-dotenv mysql-connector-python pandas matplotlib pytest
+   ```
 
-\## Setup
+3. Create a local `.env` file containing your Riot API key and MySQL connection settings. Never upload this file to GitHub.
+4. Create the `lol_analytics` database and the `matches` table expected by the import script.
+5. Run the importer:
 
+   ```bash
+   python import_ranked_matches.py
+   ```
 
+6. Run the analysis:
 
-1\. Install Python and MySQL.
+   ```bash
+   python analyze_matches.py
+   ```
 
-2\. Install the required Python packages:
+7. Generate the charts:
 
+   ```bash
+   python plot_win_rate.py
+   python plot_champion_stats.py
+   ```
 
+8. Run the tests:
 
-&#x20;  ```bash
+   ```bash
+   python -m pytest -v test_analysis.py
+   ```
 
-&#x20;  pip install requests python-dotenv mysql-connector-python pandas matplotlib pytest
-
-&#x20;  ```
-
-
-
-3\. Create a local `.env` file containing your Riot API key and MySQL connection settings. Never upload this file to GitHub.
-
-4\. Create the `lol\_analytics` database and the `matches` table expected by the import script.
-
-5\. Run the importer:
-
-
-
-&#x20;  ```bash
-
-&#x20;  python import\_ranked\_matches.py
-
-&#x20;  ```
-
-
-
-6\. Run the analysis:
-
-
-
-&#x20;  ```bash
-
-&#x20;  python analyze\_matches.py
-
-&#x20;  ```
-
-
-
-7\. Generate the charts:
-
-
-
-&#x20;  ```bash
-
-&#x20;  python plot\_win\_rate.py
-
-&#x20;  python plot\_champion\_stats.py
-
-&#x20;  ```
-
-
-
-8\. Run the tests:
-
-
-
-&#x20;  ```bash
-
-&#x20;  python -m pytest -v test\_analysis.py
-
-&#x20;  ```
-
-
-
-\## Security
-
-
+## Security
 
 API keys and database credentials are stored locally in `.env`, which is excluded from version control.
 
+## Future Improvements
 
-
-\## Future Improvements
-
-
-
-\- Expand analysis across multiple accounts.
-
-\- Explore matchup-specific trends.
-
-\- Add more analytical tests and reports.
-
-\- Develop an interactive performance dashboard.
-
-
-
+- Expand analysis across multiple accounts.
+- Explore matchup-specific trends.
+- Add more analytical tests and reports.
+- Develop an interactive performance dashboard.
