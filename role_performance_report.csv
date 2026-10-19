@@ -1,0 +1,6 @@
+role,games,wins,avg_kda,avg_cs_per_min,avg_gold,avg_damage,win_rate_pct
+MIDDLE,12,4,2.19,7.96,11521,18292,33.3
+BOTTOM,4,3,5.24,7.58,10469,12490,75.0
+TOP,2,1,2.5,8.7,10460,20124,50.0
+JUNGLE,1,1,4.0,7.89,15857,22384,100.0
+UTILITY,1,1,5.0,0.63,8817,9434,100.0
