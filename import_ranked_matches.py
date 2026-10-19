@@ -21,6 +21,27 @@ if not api_key:
     raise ValueError("API key not found. Check your .env file.")
 
 headers = {"X-Riot-Token": api_key}
+def riot_get(url, **kwargs):
+    while True:
+        response = requests.get(url, **kwargs)
+
+        if response.status_code == 429:
+            retry_after = response.headers.get("Retry-After", "120")
+
+            try:
+                wait_seconds = float(retry_after)
+            except ValueError:
+                wait_seconds = 120
+
+            print(
+                f"Rate limit reached. Waiting "
+                f"{wait_seconds:.0f} seconds before retrying..."
+            )
+            time.sleep(wait_seconds)
+            continue
+
+        response.raise_for_status()
+        return response
 base_url = "https://americas.api.riotgames.com"
 
 # Account to analyze
@@ -31,7 +52,7 @@ tag_line = "Yasuo"
 RANKED_SOLO_QUEUE = 420
 
 # How many ranked games we want to save
-TARGET_MATCHES = 20
+TARGET_MATCHES = 100
 
 
 # --------------------------------------------------
@@ -42,7 +63,7 @@ account_url = (
     f"{quote(game_name, safe='')}/{quote(tag_line, safe='')}"
 )
 
-response = requests.get(
+response = riot_get(
     account_url,
     headers=headers,
     timeout=20
@@ -68,7 +89,7 @@ while len(ranked_matches) < TARGET_MATCHES:
         f"{base_url}/lol/match/v5/matches/by-puuid/{puuid}/ids"
     )
 
-    response = requests.get(
+    response = riot_get(
         matches_url,
         headers=headers,
         params={
@@ -91,7 +112,7 @@ while len(ranked_matches) < TARGET_MATCHES:
 
         match_url = f"{base_url}/lol/match/v5/matches/{match_id}"
 
-        response = requests.get(
+        response = riot_get(
             match_url,
             headers=headers,
             timeout=20

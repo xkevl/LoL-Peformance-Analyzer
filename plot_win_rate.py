@@ -31,7 +31,7 @@ else:
     # Calculate win-rate trends
     df["cumulative_win_rate"] = df["win"].expanding().mean() * 100
     df["rolling_win_rate"] = (
-        df["win"].rolling(window=10, min_periods=10).mean() * 100
+        df["win"].rolling(window=20, min_periods=20).mean() * 100
     )
 
     # Create the chart
@@ -47,7 +47,7 @@ else:
     ax.plot(
         range(1, len(df) + 1),
         df["rolling_win_rate"],
-        label="Rolling 10-Game Win Rate",
+        label="Rolling 20-Game Win Rate",
         marker="o",
         linewidth=2
     )

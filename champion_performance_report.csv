@@ -1,6 +1,6 @@
 champion,games,wins,avg_kda,avg_cs_per_min,avg_gold,avg_gold_per_min,avg_damage,avg_damage_per_min,win_rate_pct,win_rate_reliable
-Yasuo,7,3,2.54,8.35,13472,456,21686,766,42.9,True
+Yasuo,51,26,2.88,8.57,12367,442,20547,719,51.0,True
+Yone,10,7,2.39,8.16,11692,416,18260,629,70.0,True
+Viktor,4,1,2.15,7.87,8403,389,15061,699,25.0,False
 Galio,2,0,1.5,6.62,7743,343,9826,431,0.0,False
-Viktor,1,1,4.33,7.81,11337,447,17406,686,100.0,False
 Malphite,1,0,1.0,8.84,8872,374,13433,566,0.0,False
-Yone,1,0,0.22,7.14,8259,319,17215,665,0.0,False
