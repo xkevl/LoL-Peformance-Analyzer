@@ -83,6 +83,7 @@ Compares average creep score per minute across champions.
 | `config.py` | Configures the role used for analysis |
 | `test_analysis.py` | Tests analytical functions |
 | `charts/` | Stores generated Python charts and the Tableau dashboard screenshot |
+| `lol_analytics_queries.sql` | Creates the MySQL database and table, then runs analytical queries for ranked match performance |
 | `champion_performance_report.csv` | Champion-level performance metrics |
 | `role_performance_report.csv` | Performance metrics by role |
 | `ranked_match_history.csv` | Exported ranked match history |
