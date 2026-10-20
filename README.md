@@ -13,6 +13,7 @@ The analysis includes win-rate trends, champion performance, KDA, CS per minute,
 Explore the interactive dashboard on Tableau Public:
 
 **[View the League of Legends Performance Dashboard](https://public.tableau.com/app/profile/kevin.lim7109/viz/LeagueofLegendsPerformanceDashboard/Dashboard)**
+![League of Legends Performance Dashboard](charts/dashboard.png)
 
 The dashboard visualizes rolling win rate, champion win rate, average KDA, and CS per minute to analyze ranked match performance.
 
