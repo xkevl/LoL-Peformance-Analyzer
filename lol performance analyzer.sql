@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS lol_analytics;
 USE lol_analytics;
 
